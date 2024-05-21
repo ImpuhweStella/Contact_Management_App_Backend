@@ -7,10 +7,22 @@
     },
     "host": "localhost:3000",
     "basePath": "",
+    "securityDefinitions": {
+        "bearerAuth": {
+          "type": "apiKey",
+          "name": "x-auth-token",
+          "in": "header",
+          "description": "Enter your JWT token in the format 'Bearer {token}'"
+        }
+      },
+      
+      
     "schemes": [
         "http",
         "https"
     ],
+    
+
     "paths": {
         "/contacts/createContact": {
             "post": {

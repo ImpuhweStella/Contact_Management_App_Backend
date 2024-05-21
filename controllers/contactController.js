@@ -36,4 +36,16 @@ exports.findContactById = async (req, res) => {
     res.status(404).send('Contact not found');
   }
 };
+exports.getAllContacts = async (req, res) => {
+  try {
+    // Retrieve all contacts from the database
+    const allContacts = await Contact.find({});
+
+    // Send a response with the retrieved student data
+    res.status(200).json(allContacts);
+  } catch (error) {
+    // Handle any errors during student retrieval
+    res.status(500).json({ message: error.message }); // Provide a more specific error message
+  }
+};
  
